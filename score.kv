@@ -1,0 +1,171 @@
+<CustomButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ""
+    canvas.before:
+        Color:
+            rgba: (132/255, 83/255, 140/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [43]
+<Lay>:
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            id: score
+            text: "0"
+            size_hint: None, None
+            size: 129, 101
+            pos: 46, 498
+
+        Label:
+            id: wick
+            text: "0"
+            size_hint: None, None
+            size: 129, 101
+            pos: 192, 498
+
+        Label:
+            id: ov
+            text: "0"
+            size_hint: None, None
+            size: 142, 63
+            pos: 33, 419
+
+        Label:
+            id: balls
+            text: "0"
+            size_hint: None, None
+            size: 142, 63
+            pos: 185, 421
+
+        Button:
+            id: plus
+            text: "+"
+            size_hint: None, None
+            size: 89, 45
+            pos: 69, 370
+            on_press: root.over_plus(1)
+
+        Button:
+            id: minus
+            text: "-"
+            size_hint: None, None
+            size: 89, 45
+            pos: 208, 370
+            #on_press: root.over_sub(1)
+
+        CustomButton:
+            id: no_0
+            text: "0"
+            size_hint: None, None
+            size: 99, 89
+            pos: 8, 234
+            on_press: root.inc_score(0)
+            background_normal: ""
+            canvas.before:
+                Color:
+                    rgba: (81/255, 94/255, 90/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [50]
+
+        CustomButton:
+            id: no_1
+            text: "1"
+            size_hint: None, None
+            size: 99, 89
+            pos:126, 235
+            on_press: root.inc_score(1)
+            background_normal: ""
+            canvas.before:
+                Color:
+                    rgba: (0/255, 202/255, 209/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [50]
+
+        CustomButton:
+            id: no_2
+            text: "2"
+            size_hint: None, None
+            size: 99, 89
+            pos: 245, 236
+            on_press: root.inc_score(2)
+
+        CustomButton:
+            id: no_4
+            text: "4"
+            size_hint: None, None
+            size: 99, 89
+            pos: 8, 128
+            on_press: root.inc_score(4)
+            background_normal: ""
+            canvas.before:
+                Color:
+                    rgba: (26/255, 189/255, 132/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [50]
+
+        CustomButton:
+            id: no_6
+            text: "6"
+            size_hint: None, None
+            size: 99, 89
+            pos: 128, 125
+            on_press: root.inc_score(6)
+            background_color: (0,0,0,0)
+            background_normal: ""
+            canvas.before:
+                Color:
+                    rgba: (26/255, 189/255, 132/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [50]
+
+        Button:
+            id: out
+            text: "Out"
+            size_hint: None, None
+            size: 99, 89
+            pos: 245, 124
+            on_press: root.out(1)
+            background_color: (0,0,0,0)
+            background_normal: ""
+            canvas.before:
+                Color:
+                    rgba: (199/255, 34/255, 34/255, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [50]
+
+        CustomButton:
+            id: wide
+            text: "Wide"
+            size_hint: None, None
+            size: 99, 89
+            pos: 8, 13
+            on_press: root.wide(1)
+
+        CustomButton:
+            id: nb
+            text: "Nb"
+            size_hint: None, None
+            size: 99, 89
+            pos: 126, 14
+            on_press: root.wide(1)
+
+        CustomButton:
+            id: b
+            text: "Enable"
+            size_hint: None, None
+            size: 99, 89
+            pos: 245, 12
+            on_press: root.enable()
